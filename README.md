@@ -1,2 +1,2 @@
 
-   ![My learning progress](assets/progress.svg)
+   ![My tech stack](assets/progress.svg)
