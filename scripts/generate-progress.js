@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 const fs = require("fs");
 const path = require("path");
 
@@ -33,7 +32,7 @@ async function fetchMonoIcon(slug) {
     let svg = await res.text();
     const vb = (svg.match(/viewBox="([^"]+)"/) || [])[1] || "0 0 128 128";
     let inner = svg.replace(/^[\s\S]*?<svg[^>]*>/, "").replace(/<\/svg>\s*$/, "");
-    inner = inner.replace(/fill="[^"]*"/g, "").replace(/style="[^"]*"/g, ""); // strip colors -> inherit ink
+    inner = inner.replace(/fill="[^"]*"/g, "").replace(/style="[^"]*"/g, ""); 
     return { vb, inner };
   } catch (e) {
     console.warn(`warn: icon ${slug} unavailable (${e.message})`);
@@ -45,6 +44,7 @@ const PX = {
   a:{r:[".xxx.","....x",".xxxx","x...x",".xxxx"]},
   i:{r:["..x..",".....","..x..","..x..","..x..","..x..","..x.."],asc:2},
   l:{r:["..x..","..x..","..x..","..x..","..x..","..x..","..xx."],asc:2},
+  b:{r:["x....","x....","xxxx.","x...x","x...x","x...x","xxxx."],asc:2},
   "!":{r:["..x..","..x..","..x..","..x..","..x..",".....","..x.."],asc:2},
   "'":{r:["..x..","..x..",".....",".....",".....",".....","....."],asc:2},
   m:{r:["xx.x.","x.x.x","x.x.x","x.x.x","x...x"]},
@@ -84,7 +84,7 @@ function pixelWord(word, x0, y0, cell) {
     .map(lv => ({ ...lv, items: data.filter(d => (d.level || "").toLowerCase() === lv.key) }))
     .filter(g => g.items.length > 0);
 
-  const title = pixelWord("welcome! i'm imman", PAD, 26 + 16 + 10, 6);
+  const title = pixelWord("about me", PAD, 26 + 16 + 10, 7);
   let y = 26 + 16 + 10 + title.height + 24;
   let card1 = "";
   let delayIdx = 0;
@@ -102,8 +102,9 @@ function pixelWord(word, x0, y0, cell) {
   const foot1 = y + 4;
   const CH1 = foot1 + 36;
 
+
   const iconDefs = new Map();       
-  const stripSeq = [];
+  const stripSeq = [];              
   for (const g of groups) {
     for (const item of g.items) {
       for (const slug of ICONS[item.name.toLowerCase()] || []) {
@@ -139,7 +140,7 @@ function pixelWord(word, x0, y0, cell) {
   const W = CW + OUT * 2, H = CH1 + CH2 + OUT * 2;
 
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="Profile card and language strip">
-  <title> about me — stack (updated ${updated})</title>
+  <title>about me — imman (updated ${updated})</title>
   <style>
     :root { --bg:#ffffff; --ink:#0a0a0a; --g200:#e9e9e9; --g400:#a3a3a3; --g500:#737373; }
     @media (prefers-color-scheme: dark) {
