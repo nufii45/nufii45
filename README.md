@@ -1,1 +1,2 @@
-im just a chill guy
+## Learning Curve
+   ![My learning progress](assets/progress.svg)
