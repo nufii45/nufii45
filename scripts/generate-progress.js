@@ -137,7 +137,6 @@ const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" 
   </defs>
   <g transform="translate(${OUT},${OUT})">
     <rect class="card" width="${CW}" height="${CH}" rx="16" filter="url(#soft)"/>
-    <text class="label" x="${PAD}" y="${26 + 10}">SELF-REPORTED — HONESTLY</text>
     ${title.svg}
 ${body}
     <text class="micro" x="${PAD}" y="${footY + 27}">UPDATED ${updated} — DAILY: WHAT I BUILD WITH · LEARNING: WHAT I'M STUDYING</text>
