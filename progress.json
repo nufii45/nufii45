@@ -1,0 +1,7 @@
+[
+  { "name": "HTML",       "icon": "html",  "percent": 60 },
+  { "name": "React",      "icon": "react", "percent": 7 },
+  { "name": "Java",       "icon": "java",  "percent": 4 },
+  { "name": "HTML & CSS", "icon": "css",   "percent": 3 },
+  { "name": "JavaScript", "icon": "js",    "percent": 2 }
+]
