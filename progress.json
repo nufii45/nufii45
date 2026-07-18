@@ -1,7 +1,10 @@
 [
-  { "name": "HTML",       "icon": "html",  "percent": 60 },
-  { "name": "React",      "icon": "react", "percent": 7 },
-  { "name": "Java",       "icon": "java",  "percent": 4 },
-  { "name": "HTML & CSS", "icon": "css",   "percent": 3 },
-  { "name": "JavaScript", "icon": "js",    "percent": 2 }
+  { "name": "TypeScript",   "level": "daily" },
+  { "name": "React",        "level": "daily" },
+  { "name": "React Native", "level": "daily" },
+  { "name": "Python",       "level": "daily" },
+  { "name": "FastAPI",      "level": "daily" },
+  { "name": "PostgreSQL",   "level": "daily" },
+  { "name": "JavaScript",   "level": "learning" },
+  { "name": "HTML & CSS",   "level": "learning" }
 ]
